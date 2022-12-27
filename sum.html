@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head >
+ 
+</head>
+<body align="center">
+  <h1 > Calculate SUM </h1>
+  <br> 
+  <p style="font-size: 22px;">Enter multiple numbers, separated by spaces:</p>
+  <input type="text" id="numbers"  size= 90>
+  <br> </br>
+  <button onclick="sumNumbers()" style="height: 40px; width: 80px; font-size: 18px" >Enter</button>
+
+  <p style="font-size:18px;">The sum of the numbers is:</p>
+  <p id="result" style="font-size:50px;"></p>
+
+  <script>
+    function sumNumbers() {
+      // Get the input element
+      var input = document.getElementById("numbers");
+
+      // Split the input string into an array of numbers
+      var numbers = input.value.split(" ").map(Number);
+
+      // Calculate the sum of the numbers
+      var sum = 0;
+      for (var i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+      }
+
+      // Display the result
+      document.getElementById("result").innerHTML = sum;
+    }
+  </script>
+</body>
+</html>

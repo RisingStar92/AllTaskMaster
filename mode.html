@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find Mode</title>
+</head>
+<body align="center">
+	<h1> Find Mode </h1>
+	<p style="font-size: 22px;">Enter multiple values, separated by Spaces:</p>
+	<input type="text" id="values" size= 90>
+	<br></br>
+	<button onclick="findMode()" style="height: 40px; width: 80px; font-size: 18px" >Enter</button>
+	<br></br>
+	
+	  <p style="font-size:18px;">The mode is:</p>
+          <p id="mode" style="font-size:50px;"></p>
+	<script>
+		function findMode() {
+			// Get the values entered by the user
+			var valuesString = document.getElementById('values').value;
+
+			// Split the string into an array of values
+			var valuesArray = valuesString.split(' ');
+
+			// Convert the array of string values to an array of numbers
+			valuesArray = valuesArray.map(function(value) {
+				return parseInt(value);
+			});
+
+			// Create an object to keep track of the count for each value
+			var valueCounts = {};
+			valuesArray.forEach(function(value) {
+				if (valueCounts[value]) {
+					valueCounts[value] += 1;
+				} else {
+					valueCounts[value] = 1;
+				}
+			});
+
+			// Find the value with the highest count
+			var mode = 0;
+			var maxCount = 0;
+			for (var value in valueCounts) {
+				if (valueCounts[value] > maxCount) {
+					mode = value;
+					maxCount = valueCounts[value];
+				}
+			}
+
+			// Display the mode
+			document.getElementById('mode').innerHTML = mode;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

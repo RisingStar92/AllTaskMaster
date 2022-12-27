@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head >
+ 
+</head>
+<body align="center">
+  <h1 > SUBTRACT NUMBERS </h1>
+  <br> 
+  <p style="font-size: 22px;">Enter multiple numbers, separated by spaces:</p>
+  <input type="text" id="numbers"  size= 90>
+  <br> </br>
+  <button onclick="subtractNumbers()" style="height: 40px; width: 80px; font-size: 18px" >Enter</button>
+
+  <p style="font-size:18px;">The sum of the numbers is:</p>
+  <p id="result" style="font-size:50px;"></p>
+
+<script>
+   function subtractNumbers() {
+      // Get the input element
+      var input = document.getElementById("numbers");
+
+      // Split the input string into an array of numbers
+      var numbers = input.value.split(" ").map(Number);
+
+      // Calculate the difference of the numbers
+      var difference = numbers[0];
+      for (var i = 1; i < numbers.length; i++) {
+        difference -= numbers[i];
+      }
+
+      // Display the result
+      document.getElementById("result").innerHTML = difference;
+    }
+  </script>
+</body>
+</html>
+
